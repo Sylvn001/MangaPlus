@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MangasModule } from '../mangas/mangas.module';
 import { DatabaseModule } from '../database/database.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [MangasModule, DatabaseModule],
+  imports: [ConfigModule.forRoot(), MangasModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })
