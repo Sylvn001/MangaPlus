@@ -4,6 +4,6 @@ import { MangasController } from './mangas.controller';
 
 @Module({
   controllers: [MangasController],
-  providers: [MangasService]
+  providers: [MangasService],
 })
 export class MangasModule {}

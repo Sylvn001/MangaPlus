@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MangasModule } from './mangas/mangas.module';
-import { dbOptions } from './options';
+import { MangasModule } from '../mangas/mangas.module';
+import { DatabaseModule } from '../database/database.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(dbOptions), MangasModule],
+  imports: [MangasModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService],
 })

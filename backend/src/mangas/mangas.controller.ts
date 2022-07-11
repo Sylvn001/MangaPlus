@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { MangasService } from './mangas.service';
 import { CreateMangasDto } from './dto/create-mangas.dto';
 import { UpdateMangasDto } from './dto/update-mangas.dto';
