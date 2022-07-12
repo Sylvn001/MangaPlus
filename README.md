@@ -1,4 +1,4 @@
-# Template Repository Name
+# Manga Plus
 
 > Resume of application here
 
