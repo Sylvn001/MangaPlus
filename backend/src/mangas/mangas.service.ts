@@ -1,5 +1,5 @@
 import { Mangas } from './entities/mangas.entity';
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateMangasDto } from './dto/create-mangas.dto';
 import { UpdateMangasDto } from './dto/update-mangas.dto';
 import { Repository } from 'typeorm';
@@ -8,26 +8,37 @@ import { Repository } from 'typeorm';
 export class MangasService {
   constructor(
     @Inject('MANGAS_REPOSITORY')
-    private mangaRepository: Repository<Mangas>,
+    private mangasRepository: Repository<Mangas>,
   ) {}
 
   create(createMangasDto: CreateMangasDto) {
-    return 'This action adds a new mangas';
+    return this.mangasRepository.create(createMangasDto);
   }
 
   findAll() {
-    return this.mangaRepository.find();
+    return this.mangasRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} mangas`;
+    return this.mangasRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateMangasDto: UpdateMangasDto) {
-    return `This action updates a #${id} mangas`;
+  async update(id: number, updateMangasDto: UpdateMangasDto) {
+    const mangas = await this.mangasRepository.preload({
+      id,
+      ...updateMangasDto,
+    });
+
+    if (!mangas) throw new NotFoundException();
+
+    return this.mangasRepository.save(mangas);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} mangas`;
+  async remove(id: number) {
+    const mangas = await this.mangasRepository.findOne({ where: { id } });
+
+    if (!mangas) throw new NotFoundException();
+
+    return this.mangasRepository.delete(id);
   }
 }
