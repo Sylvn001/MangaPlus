@@ -1,7 +1,7 @@
 import { timestamp } from 'rxjs';
 import { Column, Entity, PrimaryGeneratedColumn, Timestamp } from 'typeorm';
 
-@Entity
+@Entity()
 export class Mangas {
   @PrimaryGeneratedColumn()
   id: number;
