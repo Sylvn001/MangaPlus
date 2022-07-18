@@ -1,0 +1,27 @@
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { Chapter } from './chapter.entity';
+
+@Entity()
+export class Page {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @ManyToOne(() => Chapter, (chapter: Chapter) => chapter.pages)
+  chapter: Chapter;
+
+  @Column({ length: 100 })
+  img_url: string;
+
+  @CreateDateColumn({ type: 'timestamp' })
+  created_at: Date;
+
+  @UpdateDateColumn({ type: 'timestamp' })
+  updated_at: Date;
+}

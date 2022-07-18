@@ -1,4 +1,4 @@
-import { Mangas } from './entities/mangas.entity';
+import { Manga } from './entities/manga.entity';
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateMangasDto } from './dto/create-mangas.dto';
 import { UpdateMangasDto } from './dto/update-mangas.dto';
@@ -8,7 +8,7 @@ import { Repository } from 'typeorm';
 export class MangasService {
   constructor(
     @Inject('MANGAS_REPOSITORY')
-    private mangasRepository: Repository<Mangas>,
+    private mangasRepository: Repository<Manga>,
   ) {}
 
   create(createMangasDto: CreateMangasDto) {

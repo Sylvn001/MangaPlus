@@ -1,16 +1,18 @@
-import { Author } from './../../authors/entities/author.entity';
+import { Chapter } from './chapter.entity';
+import { Author } from '../../authors/entities/author.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
-export class Mangas {
+export class Manga {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -26,6 +28,9 @@ export class Mangas {
   @OneToOne(() => Author)
   @JoinColumn()
   author: Author;
+
+  @OneToMany(() => Chapter, (chapter: Chapter) => chapter.manga)
+  chapters: Chapter[];
 
   @Column({ type: 'date' })
   published_at: Date;
