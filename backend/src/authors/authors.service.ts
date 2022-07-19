@@ -1,26 +1,44 @@
-import { Injectable } from '@nestjs/common';
+import { Author } from './entities/author.entity';
+import { Repository } from 'typeorm';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAuthorDto } from './dto/create-author.dto';
 import { UpdateAuthorDto } from './dto/update-author.dto';
 
 @Injectable()
 export class AuthorsService {
+  constructor(
+    @Inject('AUTHORS_REPOSITORY')
+    private authorsRepository: Repository<Author>,
+  ) {}
+
   create(createAuthorDto: CreateAuthorDto) {
-    return 'This action adds a new author';
+    this.authorsRepository.create(createAuthorDto);
   }
 
   findAll() {
-    return `This action returns all authors`;
+    return this.authorsRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} author`;
+    return this.authorsRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateAuthorDto: UpdateAuthorDto) {
-    return `This action updates a #${id} author`;
+  async update(id: number, updateAuthorDto: UpdateAuthorDto) {
+    const author = await this.authorsRepository.preload({
+      id,
+      ...updateAuthorDto,
+    });
+
+    if (!author) throw new NotFoundException();
+
+    return this.authorsRepository.save(author);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} author`;
+  async remove(id: number) {
+    const author = await this.authorsRepository.findOne({ where: { id } });
+
+    if (!author) throw new NotFoundException();
+
+    return this.authorsRepository.delete(id);
   }
 }
