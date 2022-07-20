@@ -1,8 +1,8 @@
 # Manga Plus
 
-> Resume of application here
+> Application for read mangas using NEST.JS & Vue.JS
 
-### 💻 Main language - Version
+### 💻 NEST.JS - 8.2.6
 
 <p align="center">
   <a href="#%EF%B8%8F-tecnologies">Tecnologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -15,32 +15,39 @@
 
 ![image](https://user-images.githubusercontent.com/50564121/163297818-11a4d919-58a0-4b2b-b65e-110d3aa55f72.png)
 
-
 ## ⚒️ Tecnologies (example)
+
+- [Nest](https://ethereal.email/)
+- [Typescript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/pt-br/)
 - [Jest](https://jestjs.io/)
 - [TypeORM](https://typeorm.io/#/)
-- [Ethereal-Email](https://ethereal.email/)
-- [Typescript](https://www.typescriptlang.org/)
+- [Vue](https://ethereal.email/)
 
 ## 💻 Project
+
 This project as developed with purpose to use for all my projects template :D.
 
 ## 🚀 How start
+
 - Install dependencies using `yarn`
 - start web server in localhost using `yarn dev`
 
 ## 🕸️ Test in WEB
-Open Bowser in [`localhost:3333`](http://localhost:3333).
+
+Open Bowser in [`localhost:8000`](http://localhost:8000).
 
 # 📚 Docs
+
 - OpenApi 3.0 Using Swagger
 - Check Here [BlogApi](https://apiblognestjs.herokuapp.com/api)
 
 ## 📝 License
+
 This project use a <a href="./LICENSE"> MIT </a> License
 
 ## :atom_symbol: Follow me!
+
 - Instagram: https://www.instagram.com/sylvn001/
 - Twitch: https://www.twitch.tv/sylvn001
 - GitHub: https://github.com/Sylvn001
