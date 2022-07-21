@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  ManyToOne,
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -25,7 +26,7 @@ export class Manga {
   @Column({ length: 100 })
   img: string;
 
-  @OneToOne(() => Author)
+  @ManyToOne(() => Author, (author: Author) => author.mangas)
   @JoinColumn()
   author: Author;
 
