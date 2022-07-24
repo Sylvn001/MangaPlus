@@ -1,4 +1,4 @@
-import { Chapter } from './chapter.entity';
+import { Chapter } from '../../chapters/entities/chapter.entity';
 import { Author } from '../../authors/entities/author.entity';
 import {
   Column,
