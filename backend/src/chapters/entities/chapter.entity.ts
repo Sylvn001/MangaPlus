@@ -15,6 +15,9 @@ export class Chapter {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ length: 40 })
+  title: string;
+
   @ManyToOne(() => Manga, (manga: Manga) => manga.chapters)
   manga: Manga;
 

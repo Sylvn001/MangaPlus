@@ -4,5 +4,5 @@ import { IsString } from 'class-validator';
 export class CreateChapterDto {
   @ApiProperty({ type: String })
   @IsString()
-  name: string;
+  title: string;
 }
