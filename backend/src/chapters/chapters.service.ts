@@ -13,4 +13,12 @@ export class ChaptersService {
   create(createChapterDto: CreateChapterDto) {
     return this.chaptersRepository.create(createChapterDto);
   }
+
+  findAll() {
+    return this.chaptersRepository.find();
+  }
+
+  findOne(id: number) {
+    return this.chaptersRepository.find({ where: { id } });
+  }
 }
