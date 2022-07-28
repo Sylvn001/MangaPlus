@@ -1,6 +1,6 @@
 # Manga Plus
 
-> Application for read mangas using NEST.JS & Vue.JS
+> Application for upload and read mangas using NEST.JS & Vue.JS
 
 ### 💻 NEST.JS - 8.2.6
 
