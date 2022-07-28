@@ -2,6 +2,7 @@ import { ChaptersService } from './chapters.service';
 import {
   Body,
   Controller,
+  Get,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -23,7 +24,13 @@ export class ChaptersController {
 
   @Post('upload')
   @UseInterceptors(FileInterceptor('file'))
-  uploadFile(@UploadedFile() file: Express.Multer.File) {
+  uploadFile(@UploadedFile() file: Express.Multer.File, @Body() values: any) {
     console.log(file);
+    console.log(values);
+  }
+
+  @Get()
+  findAll() {
+    return this.chaptersService.findAll();
   }
 }
