@@ -5,9 +5,14 @@ import {
   Get,
   Post,
   UploadedFile,
+  UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
+import {
+  ExpressAdapter,
+  FileInterceptor,
+  FilesInterceptor,
+} from '@nestjs/platform-express';
 import { ApiResponse } from '@nestjs/swagger';
 import { CreateChapterDto } from './dto/create-chapter.dto';
 
@@ -23,10 +28,18 @@ export class ChaptersController {
   }
 
   @Post('upload')
-  @UseInterceptors(FileInterceptor('file'))
-  uploadFile(@UploadedFile() file: Express.Multer.File, @Body() values: any) {
-    console.log(file);
-    console.log(values);
+  @UseInterceptors(FilesInterceptor('files'))
+  uploadFile(@UploadedFiles() files: Array<Express.Multer.File>) {
+    files.forEach((file: Express.Multer.File, index) => {
+      const fileExtension = file.originalname.substring(
+        file.originalname.length - 3,
+      );
+      const fileName = `${file.originalname}-page-${
+        index + 1
+      }.${fileExtension}`;
+
+      console.log(fileName);
+    });
   }
 
   @Get()
