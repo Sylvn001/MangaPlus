@@ -1,6 +1,6 @@
 # Manga Plus
 
-> Application for read mangas using NEST.JS & Vue.JS
+> Application for upload and read mangas using NEST.JS & Vue.JS
 
 ### 💻 NEST.JS - 8.2.6
 
@@ -13,7 +13,7 @@
   <a href="#atom_symbol-follow-me">Follow Me!</a>
 </p>
 
-![image](https://user-images.githubusercontent.com/50564121/163297818-11a4d919-58a0-4b2b-b65e-110d3aa55f72.png)
+![code](https://user-images.githubusercontent.com/50564121/181837477-84621994-2709-4b43-af29-e5e92c108b57.png)
 
 ## ⚒️ Tecnologies (example)
 
