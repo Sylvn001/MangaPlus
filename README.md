@@ -26,7 +26,7 @@
 
 ## 💻 Project
 
-This project as developed with purpose to use for all my projects template :D.
+This project as developed with purpose to imprement my studies knowledges using nestjs.
 
 ## 🚀 How start
 
