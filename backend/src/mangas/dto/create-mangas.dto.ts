@@ -1,5 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import {
+  IsDate,
+  IsDateString,
+  IsNumberString,
+  IsString,
+} from 'class-validator';
 
 export class CreateMangasDto {
   @ApiProperty({ type: String })
@@ -13,4 +18,12 @@ export class CreateMangasDto {
   @ApiProperty({ type: String })
   @IsString()
   readonly img: string;
+
+  @ApiProperty({ type: String })
+  @IsNumberString()
+  readonly author_id: number;
+
+  @ApiProperty({ type: Date })
+  @IsDate()
+  readonly published_at: { type: Date };
 }
