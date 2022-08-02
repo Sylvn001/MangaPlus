@@ -12,7 +12,7 @@ export class ChaptersService {
   ) {}
 
   create(createChapterDto: CreateChapterDto) {
-    return this.chaptersRepository.create(createChapterDto);
+    return this.chaptersRepository.save(createChapterDto);
   }
 
   findAll() {

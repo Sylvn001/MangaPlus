@@ -12,7 +12,7 @@ export class MangasService {
   ) {}
 
   create(createMangasDto: CreateMangasDto) {
-    return this.mangasRepository.create(createMangasDto);
+    return this.mangasRepository.save(createMangasDto);
   }
 
   findAll() {

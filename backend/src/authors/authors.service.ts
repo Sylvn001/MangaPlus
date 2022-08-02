@@ -12,7 +12,7 @@ export class AuthorsService {
   ) {}
 
   create(createAuthorDto: CreateAuthorDto) {
-    this.authorsRepository.create(createAuthorDto);
+    return this.authorsRepository.save(createAuthorDto);
   }
 
   findAll() {
