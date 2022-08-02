@@ -26,7 +26,7 @@
 
 ## 💻 Project
 
-This project as developed with purpose to use for all my projects template :D.
+This project as developed with purpose to imprement my studies knowledges using nestjs.
 
 ## 🚀 How start
 
@@ -40,7 +40,7 @@ Open Bowser in [`localhost:8000`](http://localhost:8000).
 # 📚 Docs
 
 - OpenApi 3.0 Using Swagger
-- Check Here [BlogApi](https://apiblognestjs.herokuapp.com/api)
+- Check Here [MangasReadAPI](localhost:3000/api)
 
 ## 📝 License
 
