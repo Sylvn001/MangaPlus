@@ -11,7 +11,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity()
+@Entity('mangas')
 export class Manga {
   @PrimaryGeneratedColumn()
   id: number;
@@ -32,7 +32,7 @@ export class Manga {
   @OneToMany(() => Chapter, (chapter: Chapter) => chapter.manga)
   chapters: Chapter[];
 
-  @Column({ type: 'date' })
+  @Column({ type: Date })
   published_at: Date;
 
   @CreateDateColumn({ type: 'timestamp' })

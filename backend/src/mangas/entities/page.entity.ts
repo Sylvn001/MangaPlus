@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { Chapter } from '../../chapters/entities/chapter.entity';
 
-@Entity()
+@Entity('pages')
 export class Page {
   @PrimaryGeneratedColumn()
   id: number;

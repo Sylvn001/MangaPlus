@@ -10,7 +10,7 @@ import {
 } from 'typeorm';
 import { Page } from '../../mangas/entities/page.entity';
 
-@Entity()
+@Entity('chapters')
 export class Chapter {
   @PrimaryGeneratedColumn()
   id: number;
