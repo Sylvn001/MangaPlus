@@ -1,14 +1,15 @@
-import { Manga } from '../../mangas/entities/manga.entity';
+import { Manga } from 'src/mangas/entities/manga.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Page } from '../../mangas/entities/page.entity';
+import { Page } from './page.entity';
 
 @Entity('chapters')
 export class Chapter {
@@ -19,7 +20,11 @@ export class Chapter {
   title: string;
 
   @ManyToOne(() => Manga, (manga: Manga) => manga.chapters)
+  @JoinColumn({ name: 'mangaId' })
   manga: Manga;
+
+  @Column()
+  mangaId: string;
 
   @Column()
   scan: string;

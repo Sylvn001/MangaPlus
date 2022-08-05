@@ -16,7 +16,7 @@ export class AuthorsService {
   }
 
   findAll() {
-    return this.authorsRepository.find();
+    return this.authorsRepository.find({ relations: { mangas: true } });
   }
 
   findOne(id: number) {

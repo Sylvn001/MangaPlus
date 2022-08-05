@@ -14,9 +14,9 @@ export class CreateMangasDto {
   @IsString()
   readonly img: string;
 
-  @ApiProperty({ type: String })
+  @ApiProperty({ type: Number })
   @IsNumberString()
-  readonly author_id: number;
+  readonly authorId: number;
 
   @ApiProperty({ type: Date })
   @IsDateString()

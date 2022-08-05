@@ -2,11 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Chapter } from '../../chapters/entities/chapter.entity';
+import { Chapter } from './chapter.entity';
 
 @Entity('pages')
 export class Page {
@@ -14,6 +15,7 @@ export class Page {
   id: number;
 
   @ManyToOne(() => Chapter, (chapter: Chapter) => chapter.pages)
+  @JoinColumn({ name: 'chapterId' })
   chapter: Chapter;
 
   @Column({ length: 100 })

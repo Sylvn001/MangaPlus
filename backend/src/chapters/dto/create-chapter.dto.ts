@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmpty, isEmpty, IsString } from 'class-validator';
+import { IsEmpty, isEmpty, IsNumberString, IsString } from 'class-validator';
 
 export class CreateChapterDto {
   @ApiProperty({ type: String })
   @IsString()
-  title: string;
+  readonly title: string;
 
   @ApiProperty({ type: String })
-  @IsEmpty()
-  manga_id: string;
+  @IsNumberString()
+  readonly mangaId: string;
 }

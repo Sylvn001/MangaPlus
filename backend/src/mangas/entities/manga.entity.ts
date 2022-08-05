@@ -19,20 +19,24 @@ export class Manga {
   @Column({ length: 40 })
   name: string;
 
-  @Column({ length: 300 })
+  @Column({ length: 400, nullable: true })
   resume: string;
 
   @Column({ length: 100 })
   img: string;
 
   @ManyToOne(() => Author, (author: Author) => author.mangas)
-  @JoinColumn()
+  @JoinColumn({ name: 'authorId' })
   author: Author;
 
+  // @Column()
+  // authorId: number;
+
   @OneToMany(() => Chapter, (chapter: Chapter) => chapter.manga)
+  @JoinColumn({ name: 'chapterId' })
   chapters: Chapter[];
 
-  @Column({ type: Date })
+  @Column({ type: Date, nullable: true })
   published_at: Date;
 
   @CreateDateColumn({ type: 'timestamp' })
