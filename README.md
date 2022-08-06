@@ -22,6 +22,7 @@
 - [Express](https://expressjs.com/pt-br/)
 - [Jest](https://jestjs.io/)
 - [TypeORM](https://typeorm.io/#/)
+- [PostgresSQL](https://www.postgresql.org/)
 - [Vue](https://ethereal.email/)
 
 ## 💻 Project
