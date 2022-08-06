@@ -20,7 +20,10 @@ export class MangasService {
   }
 
   findOne(id: number) {
-    return this.mangasRepository.findOne({ where: { id } });
+    return this.mangasRepository.findOne({
+      relations: { author: true },
+      where: { id },
+    });
   }
 
   async update(id: number, updateMangasDto: UpdateMangasDto) {

@@ -29,8 +29,8 @@ export class Manga {
   @JoinColumn({ name: 'authorId' })
   author: Author;
 
-  // @Column()
-  // authorId: number;
+  @Column()
+  authorId: number;
 
   @OneToMany(() => Chapter, (chapter: Chapter) => chapter.manga)
   @JoinColumn({ name: 'chapterId' })
