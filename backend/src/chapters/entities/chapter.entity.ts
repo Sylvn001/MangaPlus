@@ -9,7 +9,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Page } from './page.entity';
+import { Page } from '../../pages/entities/page.entity';
 
 @Entity('chapters')
 export class Chapter {

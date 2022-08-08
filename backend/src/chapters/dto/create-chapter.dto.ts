@@ -9,4 +9,7 @@ export class CreateChapterDto {
   @ApiProperty({ type: String })
   @IsNumberString()
   readonly mangaId: string;
+
+  @ApiProperty({ type: String })
+  readonly scan: string;
 }
