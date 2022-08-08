@@ -31,8 +31,10 @@ This project as developed with purpose to imprement my studies knowledges using 
 
 ## 🚀 How start
 
-- Install dependencies using `yarn`
-- start web server in localhost using `yarn dev`
+- Open Backend Folder and Install dependencies using `yarn`
+- Open Frontend folder and install dependencies using `yarn` 
+- Run backend Server with `yarn start` - Server will run in localhost:3000 (You can view docs in localhost:3000/api.
+- Frontend - Work in progress.
 
 ## 🕸️ Test in WEB
 
