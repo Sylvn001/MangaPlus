@@ -32,13 +32,14 @@ This project as developed with purpose to imprement my studies knowledges using 
 ## 🚀 How start
 
 - Open Backend Folder and Install dependencies using `yarn`
-- Open Frontend folder and install dependencies using `yarn` 
+- Open Frontend folder and install dependencies using `yarn`
 - Run backend Server with `yarn start` - Server will run in localhost:3000 (You can view docs in localhost:3000/api.
 - Frontend - Work in progress.
 
 ## 🕸️ Test in WEB
 
-Open Bowser in [`localhost:8000`](http://localhost:8000).
+Open Bowser postman or another restAPI software and test routes in [`localhost:3000`](http://localhost:3000).
+Open Frontend webpage in [`localhost:8080`](http://localhost:8080).
 
 # 📚 Docs
 
