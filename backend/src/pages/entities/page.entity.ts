@@ -18,6 +18,9 @@ export class Page {
   @JoinColumn({ name: 'chapterId' })
   chapter: Chapter;
 
+  @Column()
+  chapterId: number;
+
   @Column({ length: 100 })
   img_url: string;
 
