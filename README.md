@@ -27,7 +27,7 @@
 
 ## 💻 Project
 
-This project as developed with purpose to imprement my studies & knowledge in nestjs and Typescript.
+This project was developed with the purpose to improve my knowledge of Nest, Node, and Typescript.
 
 ## 🚀 How start
 
