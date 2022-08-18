@@ -33,7 +33,7 @@ This project was developed with the purpose to improve my knowledge of Nest, Nod
 
 - Open Backend Folder and Install dependencies using `yarn`
 - Open Frontend folder and install dependencies using `yarn`
-- Run backend Server with `yarn start` - Server will run in localhost:3000 (You can view docs in localhost:3000/api.
+- Run backend Server with `yarn start` - Server will run in localhost:3000 (You can view docs in localhost:3000/api).
 - Frontend - Work in progress.
 
 ## 🕸️ Test in WEB
