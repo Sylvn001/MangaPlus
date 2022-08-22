@@ -6,18 +6,44 @@ import {
   Patch,
   Param,
   Delete,
+  UseInterceptors,
+  UploadedFile,
+  UnprocessableEntityException,
 } from '@nestjs/common';
 import { MangasService } from './mangas.service';
 import { CreateMangasDto } from './dto/create-mangas.dto';
 import { UpdateMangasDto } from './dto/update-mangas.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('mangas')
 export class MangasController {
   constructor(private readonly mangasService: MangasService) {}
 
   @Post()
-  create(@Body() createMangasDto: CreateMangasDto) {
-    return this.mangasService.create(createMangasDto);
+  @UseInterceptors(
+    FileInterceptor('img', {
+      dest: './files/mangas',
+    }),
+  )
+  create(
+    @Body() createMangasDto: CreateMangasDto,
+    @UploadedFile(
+      new ParseFilePipeBuilder()
+        .addFileTypeValidator({
+          fileType: 'jpeg',
+        })
+        .addMaxSizeValidator({
+          maxSize: 1000,
+        })
+        .build({
+          errorHttpStatusCode: UnprocessableEntityException,
+        }),
+    )
+    file: Express.Multer.File,
+  ) {
+    console.log(file);
+    console.log(createMangasDto);
+    //return this.mangasService.create(createMangasDto);
   }
 
   @Get()

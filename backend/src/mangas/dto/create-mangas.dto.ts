@@ -1,5 +1,10 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDateString, IsNumberString, IsString } from 'class-validator';
+import {
+  IsBase64,
+  IsDateString,
+  IsNumberString,
+  IsString,
+} from 'class-validator';
 
 export class CreateMangasDto {
   @ApiProperty({ type: String })
@@ -11,7 +16,6 @@ export class CreateMangasDto {
   readonly resume: string;
 
   @ApiProperty({ type: String })
-  @IsString()
   readonly img: string;
 
   @ApiProperty({ type: Number })
