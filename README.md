@@ -38,7 +38,7 @@ This project was developed with the purpose to improve my knowledge of Nest, Nod
 
 ## 🕸️ Test in WEB
 
-Open Bowser postman or another restAPI software and test routes in [`localhost:3000`](http://localhost:3000).
+Open Bowser postman or another rest - API software and test routes in [`localhost:3000`](http://localhost:3000).
 Open Frontend webpage in [`localhost:8080`](http://localhost:8080).
 
 # 📚 Docs
