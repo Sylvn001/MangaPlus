@@ -43,7 +43,7 @@ export class MangasController {
   ) {
     console.log(file);
     console.log(createMangasDto);
-    //return this.mangasService.create(createMangasDto);
+    return this.mangasService.create(createMangasDto);
   }
 
   @Get()
