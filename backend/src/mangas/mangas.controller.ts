@@ -30,7 +30,7 @@ export class MangasController {
     @UploadedFile(
       new ParseFilePipeBuilder()
         .addFileTypeValidator({
-          fileType: 'jpeg',
+          fileType: ['jpeg', 'png', 'jpg'],
         })
         .addMaxSizeValidator({
           maxSize: 1000,
