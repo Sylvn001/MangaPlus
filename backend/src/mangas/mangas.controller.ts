@@ -14,6 +14,8 @@ import { MangasService } from './mangas.service';
 import { CreateMangasDto } from './dto/create-mangas.dto';
 import { UpdateMangasDto } from './dto/update-mangas.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
+import { extname } from 'path';
 
 @Controller('mangas')
 export class MangasController {
@@ -21,29 +23,25 @@ export class MangasController {
 
   @Post()
   @UseInterceptors(
-    FileInterceptor('img', {
-      dest: './files/mangas',
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: './uploads',
+        filename: (req, file, callback) => {
+          const uniqueSuffix =
+            Date.now() + '-' + Math.round(Math.random() * 1e9);
+          const ext = extname(file.originalname);
+          const filename = `${uniqueSuffix}${ext}`;
+          callback(null, filename);
+        },
+      }),
     }),
   )
   create(
     @Body() createMangasDto: CreateMangasDto,
-    @UploadedFile(
-      new ParseFilePipeBuilder()
-        .addFileTypeValidator({
-          fileType: ['jpeg', 'png', 'jpg'],
-        })
-        .addMaxSizeValidator({
-          maxSize: 1000,
-        })
-        .build({
-          errorHttpStatusCode: UnprocessableEntityException,
-        }),
-    )
-    file: Express.Multer.File,
+    @UploadedFile() img: Express.Multer.File,
   ) {
-    console.log(file);
     console.log(createMangasDto);
-    return this.mangasService.create(createMangasDto);
+    //return this.mangasService.create(createMangasDto);
   }
 
   @Get()

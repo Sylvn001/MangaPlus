@@ -6,10 +6,12 @@ import { DatabaseModule } from '../database/database.module';
 import { ConfigModule } from '@nestjs/config';
 import { AuthorsModule } from 'src/authors/authors.module';
 import { ChaptersModule } from 'src/chapters/chapters.module';
+import { MulterModule } from '@nestjs/platform-express';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
+    MulterModule.register({ dest: './uploads' }),
     MangasModule,
     DatabaseModule,
     ChaptersModule,
