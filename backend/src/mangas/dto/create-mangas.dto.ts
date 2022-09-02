@@ -16,7 +16,7 @@ export class CreateMangasDto {
   readonly resume: string;
 
   @ApiProperty({ type: String })
-  readonly img: string;
+  readonly img: Express.Multer.File;
 
   @ApiProperty({ type: Number })
   @IsNumberString()

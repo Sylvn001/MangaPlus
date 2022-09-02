@@ -40,7 +40,7 @@ export class MangasController {
     @Body() createMangasDto: CreateMangasDto,
     @UploadedFile() img: Express.Multer.File,
   ) {
-    console.log(createMangasDto);
+    console.log(img);
     //return this.mangasService.create(createMangasDto);
   }
 
